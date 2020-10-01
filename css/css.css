@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(32, 28, 28);
+    font-family: Arial, Helvetica, sans-serif;
+}
+* {
+    box-sizing: border-box;
+    background-color: rgb(32, 28, 28);
+    
+}
+#selector {
+    background: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 95%;
+    z-index:1;
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    background: none;
+    z-index:9;
+    align-items: center;
+}
+span {
+    display: block;
+    background: inherit;
+    color: ivory;
+}
+h1,h2,time {
+    display: block;
+    background: inherit;
+}
