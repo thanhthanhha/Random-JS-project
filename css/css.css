@@ -1,14 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+@import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap);
+@font-face { 
+    font-family: 'Courier Prime', monospace;
+    src: url('/font/CourierPrime-Italic.ttf') format('ttf');
+    }
 body{
-    background-color: rgb(32, 28, 28);
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(32, 28, 28) !important;
+    font-family: 'Press Start 2P', cursive;
+    height: 100vh;
+    min-width: 100%;
+    display:flex;
+    --neon-text-color: #f40;
 }
 * {
     box-sizing: border-box;
     background-color: rgb(32, 28, 28);
-    
+    background: inherit;
 }
 #selector {
-    background: none;
+    background-color: rgb(32, 28, 28);
     position: absolute;
     left: 50%;
     top: 50%;
@@ -18,18 +28,87 @@ body{
 }
 .container {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     position: relative;
     background: none;
-    z-index:9;
     align-items: center;
+    z-index: 9;
+    height: 100%;
+    color: ivory;
 }
-span {
+#greet span {
     display: block;
     background: inherit;
     color: ivory;
 }
-h1,h2,time {
-    display: block;
-    background: inherit;
+time {
+    font-family: 'Press Start 2P', cursive;
+    font-style: italic;
+    font-size: 3.5rem;
+    font-weight: 100;
+    color: #fff;
+    text-align: center;
+    animation: flicker 1.5s infinite alternate;
+    -moz-animation: flicker 1.5s infinite alternate;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
+h1 span{
+display:inline-block;
+margin-bottom: 1rem;
+font-size: 1rem;
+font-family: 'Press Start 2P', cursive;
+}
+h2 span{
+margin-bottom: 0.5rem;
+font-size: 0.7rem;
+font-family: 'Press Start 2P', cursive;
+}
+h1,h2:focus {
+    outline: none;
+  }
+@media(max-width: 700px) {
+    time {
+        font-size: 6rem;
+    }
+}
+@keyframes flicker {
+    
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      
+        text-shadow:
+        -0.2rem -0.2rem 0.5rem #fff,
+        0.2rem 0.2rem 0.5rem #fff,
+        0 0 1.5rem var(--neon-text-color),
+        0 0 2rem var(--neon-text-color),
+        0 0 2.5rem var(--neon-text-color),
+        0 0 3rem var(--neon-text-color),
+        0 0 4rem var(--neon-text-color),
+        0 0 4.5rem var(--neon-text-color),
+        0 0 5rem var(--neon-text-color),
+        0 0 5.5rem var(--neon-text-color),
+        0 0 6rem var(--neon-text-color);
+    }
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+}
+@keyframes jiggle {
+    25%, 75% {
+        transform: scale(1.0, 1.0)
+      }
+      50%, 0% {
+        transform: scale(1.0, 0.8)
+      }
+      100% {
+        transform: scale(1.0, 1.2)
+      }
+    }
+  }
