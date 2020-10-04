@@ -11,6 +11,8 @@ body{
     min-width: 100%;
     display:flex;
     --neon-text-color: #f40;
+    max-width: 100%;
+overflow-x: hidden;
 }
 * {
     box-sizing: border-box;
@@ -35,8 +37,21 @@ body{
     background: none;
     align-items: center;
     z-index: 9;
-    height: 100%;
+    max-height: 100%;
+    max-width: 50rem;
     color: ivory;
+}
+#greet1{
+    display: flex;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 100;
+    font-size: 0.9rem;
+    width: 40rem !important;
+    max-height: 10rem;
+    padding-top: 2rem;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
 }
 #greet span {
     display: block;
@@ -59,7 +74,7 @@ time {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
-}
+}+
 h1 span{
 display:inline-block;
 margin-bottom: 1rem;
@@ -74,6 +89,24 @@ font-family: 'Press Start 2P', cursive;
 h1,h2:focus {
     outline: none;
   }
+#arrow {
+    display: inline-block;
+    background: none;
+    position: relative;
+    text-align: center;
+    margin-left: 1.2rem;
+    margin-right: 0.8rem;
+    font-size: 1.5rem;
+    height: 100%;
+    vertical-align: middle;
+  }
+.arrow {
+    animation: move 1.5s infinite alternate;
+  }
+.animated {
+    animation: blip 1s 1 alternate;
+  }
+
 @media(max-width: 700px) {
     time {
         font-size: 6rem;
@@ -92,9 +125,7 @@ h1,h2:focus {
         0 0 3rem var(--neon-text-color),
         0 0 4rem var(--neon-text-color),
         0 0 4.5rem var(--neon-text-color),
-        0 0 5rem var(--neon-text-color),
-        0 0 5.5rem var(--neon-text-color),
-        0 0 6rem var(--neon-text-color);
+        0 0 5rem var(--neon-text-color);
     }
     20%, 24%, 55% {        
         text-shadow: none;
@@ -111,4 +142,11 @@ h1,h2:focus {
         transform: scale(1.0, 1.2)
       }
     }
+  @keyframes move {
+    0%{transform: translate(0, 0);}
+    55% {transform: translate(0.5rem, 0);} 
+  }
+  @keyframes blip {
+    25%, 75% {opacity: 0;}
+    26%, 76% {opacity: 1;}
   }
