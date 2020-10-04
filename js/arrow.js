@@ -1,0 +1,1 @@
+$("#arrow").focus(() => {alert( "Handler for .focus() called." );$("#arrow").addClass("animated");});
