@@ -40,6 +40,7 @@ overflow-x: hidden;
     max-height: 100%;
     max-width: 50rem;
     color: ivory;
+    overflow: auto;
 }
 #greet1{
     display: flex;
@@ -49,7 +50,6 @@ overflow-x: hidden;
     width: 40rem !important;
     max-height: 10rem;
     padding-top: 2rem;
-    overflow: auto;
     justify-content: center;
     align-items: center;
 }
@@ -86,9 +86,14 @@ margin-bottom: 0.5rem;
 font-size: 0.7rem;
 font-family: 'Press Start 2P', cursive;
 }
+/*set focus*/
 h1,h2:focus {
     outline: none;
   }
+#name:focus {
+    outline: none;
+  }
+/*animate arrow*/
 #arrow {
     display: inline-block;
     background: none;
@@ -96,9 +101,10 @@ h1,h2:focus {
     text-align: center;
     margin-left: 1.2rem;
     margin-right: 0.8rem;
+    margin-bottom: 0.3rem;
     font-size: 1.5rem;
     height: 100%;
-    vertical-align: middle;
+    vertical-align: -10px;
   }
 .arrow {
     animation: move 1.5s infinite alternate;
@@ -106,7 +112,7 @@ h1,h2:focus {
 .animated {
     animation: blip 1s 1 alternate;
   }
-
+/*animation*/
 @media(max-width: 700px) {
     time {
         font-size: 6rem;
