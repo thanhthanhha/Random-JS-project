@@ -86,6 +86,9 @@ margin-bottom: 0.5rem;
 font-size: 0.7rem;
 font-family: 'Press Start 2P', cursive;
 }
+audio {
+  display:none;
+}
 /*set focus*/
 h1,h2:focus {
     outline: none;
