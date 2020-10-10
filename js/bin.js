@@ -1,16 +1,25 @@
+//
 
+//set arrow animation
 $( document ).ready(() => {
-    console.log('dope');
     $("#name").focus(() => {
-    console.log( "Handler for .focus() called." );
-    $("#arrow").removeClass("arrow");
-    $("#arrow").addClass("animated");
-});
-$("#name").blur(() => {
-    console.log( "Handler for .focus() called." );
-    $("#arrow").removeClass("animated");
-    $("#arrow").addClass("arrow");
-});
+        console.log( "Handler for .focus() called." );
+        $("#arrow").removeClass("arrow");
+        $("#arrow").addClass("animated");
+    });
+    $("#name").blur(() => {
+        console.log( "Handler for .focus() called." );
+        $("#arrow").removeClass("animated");
+        $("#arrow").addClass("arrow");
+        localStorage.setItem('#name', event.target.innerText);
+    });
+    $('#name').keypress(() => {
+        if(e.which == 13 || e.keyCode == 13) {
+            localStorage.setItem('#name', event.target.innerText);
+            $('#name').blur();
+            console.log(localStorage.getItem("#name"));
+        }
+    });
 }
 )
 function showTime() {
@@ -39,20 +48,14 @@ function getName() {
         console.log(localStorage.getItem('name'));
     }
 }
-jQuery(document.body).on("blur", () => {
-    $('#name').blur(() => {
-        localStorage.setItem('#name', e.target.innerText);
-    });
-})
-jQuery(document.body).on("click", () => {
-    $('#name').keypress(() => {
-        if(e.which == 13 || e.keyCode == 13) {
-            localStorage.setItem('#name', e.target.innerText);
-            $('#name').blur();
-        }
-        console.log('asdsadasd');
-    })
-})
+function storage() {
+    console.log("leave");
+    if(localStorage.getItem("#name") === null) {
+        document.getElementById("name").innerHTML = "Thanh Ha";
+    } else {
+        document.getElementById("name").innerHTML = localStorage.getItem("#name");
+    }
+}
 //run
 showTime();
 getName();
