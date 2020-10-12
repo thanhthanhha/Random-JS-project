@@ -14,7 +14,6 @@ $( document ).ready(() => {
         localStorage.setItem('#name', event.target.innerText);
     });
     $('#name').keypress(() => {
-        if(e.which == 13 || e.keyCode == 13) {
         if(event.which == 13 || event.keyCode == 13) {
             localStorage.setItem('#name', event.target.innerText);
             $('#name').blur();
